@@ -24,12 +24,12 @@ const QuestionCard: React.FC<questionProps> = ({
   totalQuestion,
 }) => {
   return (
-    <Card bodyStyle={{ backgroundColor: "#efefef" }}>
+    <Card bodyStyle={{ backgroundColor: "#1F2124" }} bordered={false}>
       <Row>
         <Col span={24}>
-          <Title>
+          <h1 className="questionHeadline">
             Question: {questionNumber} / {totalQuestion}
-          </Title>
+          </h1>
         </Col>
         <Col span={24}>
           <p
@@ -40,16 +40,15 @@ const QuestionCard: React.FC<questionProps> = ({
         <Col span={24}>
           {answers.map((answer, i) => (
             <div>
-              <Button
+              <button
                 key={i}
                 disabled={!!userAnswer}
                 value={answer}
                 onClick={callback}
-                size={"large"}
-                className="answerBtn"
+                className="primary"
               >
                 <span dangerouslySetInnerHTML={{ __html: answer }}></span>
-              </Button>
+              </button>
             </div>
           ))}
         </Col>

@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import QuestionCard from "./components/QuestionCard";
 import { fetchQuestions, Difficulty, questionState } from "./api";
 import "./App.css";
-import { Typography, Row, Col, Tag, Button, Spin, Image } from "antd";
+import { Row, Col, Tag, Button, Spin, Image } from "antd";
 import "antd/dist/antd.css";
 
 const TOTAL = 10;
@@ -66,17 +66,21 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <Row gutter={[16, 16]}>
+      <Row gutter={[24, 24]}>
         <Col span={24}>
           {gameOver || userAnswers.length === TOTAL ? (
-            <Button onClick={quizStart} type="primary">
+            <button
+              className="primary"
+              onClick={quizStart}
+              style={{ marginTop: "24px" }}
+            >
               Start the Quiz!
-            </Button>
+            </button>
           ) : null}
         </Col>
         {!gameOver ? (
           <Col span={24}>
-            <Tag color="#fd7c00">Score: {score}</Tag>
+            <Tag color="#f6b352">Score: {score}</Tag>
           </Col>
         ) : null}
         {loading && (
@@ -103,9 +107,9 @@ const App = () => {
           !loading &&
           userAnswers.length === number + 1 &&
           number !== TOTAL - 1 ? (
-            <Button className="nextBtn" type="primary" onClick={nextQuestion}>
+            <button className="primary" onClick={nextQuestion}>
               Next Question
-            </Button>
+            </button>
           ) : null}
         </Col>
       </Row>

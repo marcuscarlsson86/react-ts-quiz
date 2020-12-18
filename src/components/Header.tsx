@@ -4,11 +4,9 @@ import "../../src/App.css";
 
 const Header = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1 className="headline">SPORTS QUIZ</h1>
-      </header>
-    </div>
+    <header className="App-header">
+      <h1 className="headline">SPORTS QUIZ</h1>
+    </header>
   );
 };
 
